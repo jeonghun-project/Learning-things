@@ -80,6 +80,7 @@ export default {
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 28px;
 }
 
 .copy-button:active {
