@@ -69,9 +69,6 @@ export default {
     showSuccess() {
       this.copied = true;
       alert("✅ 복사 완료!");
-      setTimeout(() => {
-        window.close();
-      }, 1000);
     },
   },
 };
