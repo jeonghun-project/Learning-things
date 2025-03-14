@@ -5,20 +5,32 @@ export default ({ router }) => {
       const textToCopy = urlParams.get("text");
 
       if (textToCopy) {
-        navigator.clipboard
-          .writeText(textToCopy)
-          .then(() => {
-            alert("✅ 링크가 복사되었습니다!");
-            window.close(); // 창 자동 종료
-          })
-          .catch((err) => {
-            alert("❌ 복사 실패! 브라우저 설정을 확인하세요.");
-            console.error("복사 실패:", err);
-          });
+        setTimeout(() => {
+          navigator.clipboard
+            .writeText(textToCopy)
+            .then(() => {
+              alert("✅ 링크가 복사되었습니다!");
+              window.close();
+            })
+            .catch(() => {
+              fallbackCopy(textToCopy);
+            });
+        }, 100);
       } else {
         alert("⚠️ 복사할 텍스트가 없습니다.");
-        window.close();
+        setTimeout(() => window.close(), 500);
       }
     }
   });
+
+  function fallbackCopy(text) {
+    const textarea = document.createElement("textarea");
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+    alert("✅ 링크가 복사되었습니다!");
+    setTimeout(() => window.close(), 500);
+  }
 };
