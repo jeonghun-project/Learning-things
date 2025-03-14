@@ -78,6 +78,7 @@ export default {
 .copy-container {
   text-align: center;
   padding: 20px;
+  font-size: 28px;
 }
 .copy-button {
   padding: 8px 12px;
@@ -86,7 +87,6 @@ export default {
   color: white;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 28px;
 }
 
 .copy-button:active {
