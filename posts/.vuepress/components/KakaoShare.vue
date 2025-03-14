@@ -5,6 +5,7 @@
       alt="카카오톡 공유"
     />
   </a>
+  <span> 카카오톡 공유하기 </span>
 </template>
 
 <script>
