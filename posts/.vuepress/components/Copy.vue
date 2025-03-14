@@ -20,13 +20,6 @@ export default {
   mounted() {
     const urlParams = new URLSearchParams(window.location.search);
     this.textToCopy = urlParams.get("text") || "";
-
-    // 자동 복사 기능 (iOS 대응)
-    if (this.textToCopy) {
-      setTimeout(() => {
-        this.handleCopy();
-      }, 500);
-    }
   },
   methods: {
     async handleCopy() {
