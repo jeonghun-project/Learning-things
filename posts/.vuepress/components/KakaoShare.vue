@@ -30,7 +30,11 @@ export default {
   },
   computed: {
     isKakaoLoaded() {
-      return typeof window !== "undefined" && window.Kakao;
+      return (
+        typeof window !== "undefined" &&
+        window.Kakao &&
+        window.Kakao.isInitialized()
+      );
     },
   },
   methods: {
