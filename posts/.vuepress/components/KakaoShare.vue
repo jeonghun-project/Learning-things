@@ -9,8 +9,8 @@
     </a>
     <span class="kakao-share-text">{{ "<- 카카오톡 공유하기" }}</span>
   </div>
-  <div v-else>
-    <span>잠시만 기다려주세요</span>
+  <div v-else class="kakao-share-container">
+    <span class="kakao-share-text">잠시만 기다려주세요</span>
   </div>
 </template>
 
